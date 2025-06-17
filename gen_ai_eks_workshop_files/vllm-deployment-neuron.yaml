@@ -78,8 +78,6 @@ spec:
           image: public.ecr.aws/aws-containers/aiml/ray-2.43.0-py311-vllm-neuron:latest
           imagePullPolicy: IfNotPresent
           command: ["/bin/sh", "-c"]
-          imagePullPolicy: IfNotPresent
-          command: ["/bin/sh", "-c"]
           args: [
             "vllm serve /tmp/models/mistral-7b-v0-2 --tokenizer /tmp/models/mistral-7b-v0-2 --port 8080 --host 0.0.0.0 --device neuron --tensor-parallel-size 2 --max-num-seqs 4 --block-size 8 --use-v2-block-manager --max-model-len 2048 --dtype bfloat16"
           ]
